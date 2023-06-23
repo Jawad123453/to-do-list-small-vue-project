@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/094cb2e4ea.js" crossorigin="anonymous"></script>  <title>Document</title>
+  <link rel="stylesheet" href="new.css">
+  <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="contaner">
+        <div class="branding">
+          <img src="Vue_Logo_Black.png">
+          <h1>Vue Todos</h1>
+        </div>
+        <ul class="router-nav">
+          <li @click="about=false" :class='[about==true?"":"active"]'>Home</li>
+          <li @click="about=true" :class='[about==true?"active":""]'>About</li>
+        </ul>
+      </div>
+    </header>
+    <div class="mainapp" v-if="!about">
+      <h1>Create Todo</h1>
+      <div class="maininput">
+        <input type="text" v-model="mainone">
+        <button @click="addit">Create</button>
+      </div>
+      <div class="result">
+        <div v-if="mainarray.length > 0" v-for="(main,index) in mainarray" :key="main.id">
+          <div class="maindata" :class='[main.state == true ?"newone":""]'>
+            <input type="checkbox" @click="doit(index)" v-model="main.state">
+            <h3 v-if="!main.updatebtn">{{main.title}}</h3>
+            <input v-if="main.updatebtn" type="text" class="updateinput" v-model="updatevalue">
+          </div>
+          <div class="secondary-data">
+            <button class="update"  @click="updatethedata(index)">UP</button>
+            <button class="Delete" :data-id="main.id" @click="deleteit(index)">DE</button>
+          </div>
+        </div>
+        <p v-else>You have no todo's to complete! Add one!</p>
+      </div>
+    </div>
+    <div class="about-page" v-else>
+      <div class="contaner">
+        <h1>Vue Todos</h1>
+        <p>Vue Todos is a CRUD Todo tracking 
+          application created for a Vue 3 Crash Course by John Komarnicki.<br><br>
+          Track your daily task's using this todo tracker with 
+          abilities to save, complete, edit & delete todos.<br><br>
+          Feel free to add on to this application with 
+          functionalities such as the ability to drag and reorder todos, 
+          animate creation/deletion of todos or even create this into a full
+          stack application with the ability to have different lists for 
+          different days of tracking todos!</p>
+      </div>
+    </div>
+  </div>
+  <script src="new.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+:root{
+  --primary-color:rgb(14, 184, 70);
+  --main-trans: 0.3s linear;
+}
+*{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+body{
+  font-family: sans-serif;
+}
+.contaner{
+  width:1100px;
+  margin:0 auto;
+}
+@media (max-width:1200px) {
+  .contaner{
+    width:900px;
+  }
+}
+@media (max-width:1000px) {
+  .contaner{
+    width:700px;
+  }
+}
+@media (max-width:800px) {
+  .contaner{
+    width:550px;
+  }
+}
+@media (max-width:650px) {
+  .contaner{
+    width:400px;
+  }
+}
+@media (max-width:550px) {
+  .contaner{
+    width:300px;
+  }
+}
+header{
+  width:100%;
+  background-color: rgb(231, 231, 231);
+}
+header .contaner{
+  display: flex;
+  justify-content: space-between;
+  padding:20px 0;
+  align-items: center;
+}
+@media (max-width:550px) {
+  header .contaner{
+    flex-direction: column;
+    gap:15px;
+  }
+}
+header .contaner .branding{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .contaner .branding h1{
+  font-size: 25px;
+}
+header .contaner .branding img{
+  width:50px;
+}
+header .contaner ul.router-nav{
+  display: flex;
+  align-items: center;
+  gap:10px;
+  list-style: none;
+}
+header .contaner ul.router-nav li{
+  cursor: pointer;
+  padding:10px 20px;
+  border: none;
+  border-radius: 20px;
+  transition:var(--main-trans);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-transition:var(--main-trans);
+  -moz-transition:var(--main-trans);
+  -ms-transition:var(--main-trans);
+  -o-transition:var(--main-trans);
+}
+header .contaner ul.router-nav li:hover,
+header .contaner ul.router-nav li.active{
+  background-color: var(--primary-color);
+  color:white;
+}
+.mainapp{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:20px;
+  width:500px;
+  margin:0 auto;
+  margin-top:30px;
+}
+.mainapp h1{
+  font-size: 35px;
+}
+.mainapp .maininput{
+  display: flex;
+  width:100%;
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0px 0px 10px 0px gray;
+}
+.mainapp .maininput input{
+  padding:11px 0 11px 10px;
+  flex:1;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+.mainapp .maininput button{
+  height:45px;
+  border: none;
+  width:60px;
+  cursor: pointer;
+  transition: var(--main-trans);
+  -webkit-transition: var(--main-trans);
+  -moz-transition: var(--main-trans);
+  -ms-transition: var(--main-trans);
+  -o-transition: var(--main-trans);
+} 
+.mainapp .maininput button:hover{
+  background-color: var(--primary-color);
+  color:white;
+}
+.result{
+  width:500px;
+}
+@media (max-width:800px) {
+  .mainapp,
+  .result{
+    width:400px;
+  }
+}
+@media (max-width:500px) {
+  .mainapp,
+  .result{
+    width:300px;
+  }
+}
+.result div{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  margin:0 auto;
+  background-color: rgb(231, 231, 231);
+  padding:7px 10px;
+  box-shadow: 0px 10px 10px 0px rgb(202, 202, 202);
+  margin-bottom: 20px;
+}
+.result > p{
+  text-align: center;
+}
+.result div .maindata,
+.result div .secondary-data{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap:10px;
+  box-shadow: none;
+  margin-bottom: 0px;
+}
+.result div .maindata{
+  flex:1;
+  width: 100%;
+}
+.result div .maindata input.updateinput{
+  flex:1;
+  width:100%;
+  border: 2px solid var(--primary-color);
+  outline: none;
+  border: 1px solid var(--primary-color);
+  padding:5px;
+}
+.result div .maindata input[type=checkbox]{
+  /* appearance: none; */
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+}
+.result div .maindata h3{
+  font-weight: normal;
+}
+.result div .maindata.newone h3{
+  text-decoration: line-through;
+}
+.result div .secondary-data{
+  justify-content: end;
+  width: fit-content;
+  gap:0;
+}
+.result div .secondary-data button{
+  padding:10px 15px;
+  color:white;
+  border: none;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.result div .secondary-data button:hover{
+  opacity: 1;
+}
+.result div .secondary-data button.Delete{
+  background-color: rgb(161, 21, 2);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.result div .secondary-data button.update{
+  background-color: rgb(10, 187, 4);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.about-page{
+  margin-top: 50px;
+}
+@media (max-width:550px) {
+  .about-page .contaner h1{
+    text-align: center;
+  }
+}
+.about-page h1{
+  margin-bottom: 20px;
+}
+.about-page p{
+  line-height: 1.5;
+}
